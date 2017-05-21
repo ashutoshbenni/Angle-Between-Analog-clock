@@ -1,5 +1,20 @@
 from sys import exit
 
+def angle(hh , mm):
+	hh =  hh if hh <13 else hh - 12
+	ans = abs(0.5 * (hh * 60 + mm) - 6 * mm)
+	return min(360 - ans, ans)
+	
+	
+try:
+	hh, mm = list(map(int, input("Please enter time in hh:mm format\n").split(":")))
+except ValueError:
+	print ("Invalid input")
+	exit()
+
+print (angle(hh, mm))
+		  
+"""
 try:
 	hh, mm = list(map(int, input("Please enter time in hh:mm format\n").split(":")))
 except Exception:
@@ -31,4 +46,4 @@ else:
 		angle = abs((mm) / 2 - (mm - (minute_hand * 5)) * 6)
 
 print (angle)   		
-
+"""
